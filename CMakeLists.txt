@@ -1538,6 +1538,15 @@ endif()
 #-----------------------------------------------------------------------------
 # If we succeeded, we can go on and include packaging!
 if(VRPN_INSTALL)
+	# Install cmake files
+
+	install(FILES
+		"${CMAKE_CURRENT_SOURCE_DIR}/cmake/quatlibConfig.cmake"
+		"${CMAKE_CURRENT_SOURCE_DIR}/cmake/VRPNConfig.cmake"
+		DESTINATION "${CMAKE_INSTALL_PREFIX}/cmake"
+	)
+
+
 	include(CPack)
 	cpack_add_component(serversdk
 		DISPLAY_NAME
